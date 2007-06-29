@@ -1,5 +1,5 @@
 %define major_version 1.4
-%define minor_version 3
+%define minor_version 4
 %define lib_major 0
 %define lib_name %mklibname glom-1_ %{lib_major}
 
@@ -11,9 +11,6 @@ Group:          Development/Databases
 License:        GPL
 URL:            http://www.glom.org/
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/glom/%{major_version}/%{name}-%{major_version}.%{minor_version}.tar.bz2
-Patch0:         glom-1.0.5-poconfig.patch
-Patch1:         glom-1.2.2-py25.patch
-Patch2:		glom-1.3.10_fix_postgresql
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:  bakery-devel >= 2.4
@@ -64,10 +61,6 @@ A support library for accessing Glom data.
 
 %prep
 %setup -q
-#%patch0 -p1 -b .poconfig
-#%patch1 -p1 -b .py25
-#%patch2 -p0 -b .postgresql
-
 
 %build
 %configure \
@@ -131,6 +124,3 @@ rm -rf ${RPM_BUILD_ROOT}
 %files -n %{lib_name}
 %defattr(-,root,root)
 %{_libdir}/*.so.*
-
-
-
