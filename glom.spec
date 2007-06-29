@@ -31,7 +31,7 @@ BuildRequires: libxslt-proc
 BuildRequires: libgtksourceviewmm-devel
 BuildRequires: postgresql postgresql-contrib postgresql-devel postgresql-pl postgresql-plpgsql postgresql-plpython postgresql-server
 BuildRequires: gettext-devel
-BuildRequires: gnome-pyton-gda-devel
+BuildRequires: gnome-python-extras
 
 Requires: gda1.2-postgres
 Requires: postgresql postgresql-contrib postgresql-devel postgresql-pl postgresql-plpgsql postgresql-plpython postgresql-server
