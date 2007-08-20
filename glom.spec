@@ -38,8 +38,8 @@ Requires: postgresql postgresql-contrib postgresql-devel postgresql-pl postgresq
 
 Requires(post):   shared-mime-info desktop-file-utils
 Requires(postun): shared-mime-info desktop-file-utils
-Requires(post):   /sbin/ldconfig
-Requires(postun): /sbin/ldconfig
+Requires(post):   ldconfig
+Requires(postun): ldconfig
 Requires(post):   scrollkeeper
 Requires(postun): scrollkeeper
 
