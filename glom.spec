@@ -5,7 +5,7 @@
 
 Name:           glom
 Version:        %{major_version}.%{minor_version}
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        Easy-to-use database designer and user interface.
 Group:          Development/Databases
 License:        GPL
