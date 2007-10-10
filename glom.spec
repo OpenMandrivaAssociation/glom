@@ -28,9 +28,9 @@ BuildRequires:  scrollkeeper
 BuildRequires:  startup-notification-devel
 BuildRequires:  iso-codes
 BuildRequires: libxslt-proc
-BuildRequires: libgtksourceviewmm-devel
+BuildRequires: libgtksourceviewmm-1.0-devel
 BuildRequires: postgresql8.2 postgresql8.2-contrib postgresql8.2-devel postgresql8.2-pl postgresql8.2-plpgsql postgresql8.2-plpython postgresql8.2-server
-BuildRequires: gettext-devel
+BuildRequires: gettext-devel libgoocanvas-devel
 BuildRequires: gnome-python-extras
 
 Requires: gda1.2-postgres
