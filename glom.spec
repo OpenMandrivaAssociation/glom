@@ -1,11 +1,11 @@
-%define major_version 1.4
-%define minor_version 4
+%define major_version 1.6
+%define minor_version 1
 %define lib_major 0
 %define lib_name %mklibname glom-1_ %{lib_major}
 
 Name:           glom
 Version:        %{major_version}.%{minor_version}
-Release:        %mkrel 2
+Release:        %mkrel 1
 Summary:        Easy-to-use database designer and user interface
 Group:          Development/Databases
 License:        GPL
@@ -15,7 +15,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:  bakery-devel >= 2.4
 BuildRequires:  desktop-file-utils gettext intltool
-BuildRequires:  libgdamm-devel >= 1.3.7
+BuildRequires:  libgdamm3-devel
 BuildRequires:  python
 BuildRequires:  python-devel
 BuildRequires:  gnome-python-gda gnome-python-gda-devel
@@ -29,12 +29,12 @@ BuildRequires:  startup-notification-devel
 BuildRequires:  iso-codes
 BuildRequires: libxslt-proc
 BuildRequires: libgtksourceviewmm-devel
-BuildRequires: postgresql postgresql-contrib postgresql-devel postgresql-pl postgresql-plpgsql postgresql-plpython postgresql-server
+BuildRequires: postgresql8.2 postgresql8.2-contrib postgresql8.2-devel postgresql8.2-pl postgresql8.2-plpgsql postgresql8.2-plpython postgresql8.2-server
 BuildRequires: gettext-devel
 BuildRequires: gnome-python-extras
 
 Requires: gda1.2-postgres
-Requires: postgresql postgresql-contrib postgresql-devel postgresql-pl postgresql-plpgsql postgresql-plpython postgresql-server
+Requires: postgresql8.2 postgresql8.2-contrib postgresql8.2-devel postgresql8.2-pl postgresql8.2-plpgsql postgresql8.2-plpython postgresql8.2-server
 
 Requires(post):   shared-mime-info desktop-file-utils
 Requires(postun): shared-mime-info desktop-file-utils
@@ -49,7 +49,7 @@ lookups, related fields, related records, calculated fields, drop-down
 choices, searching, reports, users and groups. It has Numeric, Text,
 Date, Time, Boolean, and Image field types. Glom systems require
 almost no programming, but you may use Python for calculated fields or
-buttons. Glom uses the PostgreSQL database backend.
+buttons. Glom uses the postgresql8.2 database backend.
 
 %package -n     %{lib_name}
 Summary:        %{Summary}
@@ -119,6 +119,7 @@ rm -rf ${RPM_BUILD_ROOT}
 %{_datadir}/mime/packages/%{name}.xml
 %{_datadir}/mime-info/*
 %{_datadir}/omf/%{name}
+%{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %files -n %{lib_name}
 %defattr(-,root,root)
