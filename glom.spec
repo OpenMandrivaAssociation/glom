@@ -1,7 +1,7 @@
 %define major_version 1.6
 %define minor_version 1
 %define lib_major 0
-%define lib_name %mklibname glom-1_ %{lib_major}
+%define lib_name %mklibname glom %{lib_major}
 
 Name:           glom
 Version:        %{major_version}.%{minor_version}
@@ -54,6 +54,7 @@ buttons. Glom uses the postgresql8.2 database backend.
 %package -n     %{lib_name}
 Summary:        %{Summary}
 Group:          System/Libraries
+Obsoletes:	%mklibname glom-1_ 0
 
 %description -n %{lib_name}
 A support library for accessing Glom data.
@@ -123,4 +124,4 @@ rm -rf ${RPM_BUILD_ROOT}
 
 %files -n %{lib_name}
 %defattr(-,root,root)
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{lib_major}*
