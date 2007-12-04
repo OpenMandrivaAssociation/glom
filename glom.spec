@@ -1,5 +1,5 @@
 %define major_version 1.6
-%define minor_version 4
+%define minor_version 5
 %define lib_major 0
 %define lib_name %mklibname glom %{lib_major}
 
