@@ -1,5 +1,5 @@
 %define major_version 1.6
-%define minor_version 5
+%define minor_version 6
 %define lib_major 0
 %define lib_name %mklibname glom %{lib_major}
 
@@ -8,7 +8,7 @@ Version:        %{major_version}.%{minor_version}
 Release:        %mkrel 1
 Summary:        Easy-to-use database designer and user interface
 Group:          Development/Databases
-License:        GPL
+License:        GPLv2+
 URL:            http://www.glom.org/
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/glom/%{major_version}/%{name}-%{major_version}.%{minor_version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
