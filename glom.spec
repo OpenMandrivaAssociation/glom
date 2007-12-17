@@ -11,7 +11,6 @@ Group:          Development/Databases
 License:        GPLv2+
 URL:            http://www.glom.org/
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/glom/%{major_version}/%{name}-%{major_version}.%{minor_version}.tar.bz2
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:  bakery-devel >= 2.4
 BuildRequires:  desktop-file-utils gettext intltool
