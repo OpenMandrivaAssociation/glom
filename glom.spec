@@ -15,7 +15,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:  bakery-devel >= 2.4
 BuildRequires:  desktop-file-utils gettext intltool
-BuildRequires:  libgdamm3-devel
+BuildRequires:  libgdamm3-devel >= 2.9.81
 BuildRequires:  python
 BuildRequires:  python-devel
 BuildRequires:  gnome-python-gda gnome-python-gda-devel
@@ -63,7 +63,7 @@ A support library for accessing Glom data.
 %setup -q
 
 %build
-%configure \
+%configure2_5x \
         --disable-dependency-tracking \
         --disable-static \
         --disable-update-mime-database \
@@ -82,7 +82,6 @@ find $RPM_BUILD_ROOT -type f -name "*.la" -exec rm -f {} ';'
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
-  --add-category="X-MandrivaLinux-MoreApplications-Databases" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 #rm -f ${RPM_BUILD_ROOT}%{_libdir}/libglom.so
