@@ -13,7 +13,7 @@ URL:            http://www.glom.org/
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/glom/%{major_version}/%{name}-%{major_version}.%{minor_version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
-BuildRequires:  bakery-devel >= 2.4
+BuildRequires:  libbakery2.4-devel >= 2.4
 BuildRequires:  desktop-file-utils gettext intltool
 BuildRequires:  libgdamm3-devel >= 2.9.81
 BuildRequires:  python
@@ -29,12 +29,14 @@ BuildRequires:  startup-notification-devel
 BuildRequires:  iso-codes
 BuildRequires: libxslt-proc
 BuildRequires: libgtksourceviewmm-1.0-devel
-BuildRequires: postgresql8.2 postgresql8.2-contrib postgresql8.2-devel postgresql8.2-pl postgresql8.2-plpgsql postgresql8.2-plpython postgresql8.2-server
+#BuildRequires: postgresql8.2 postgresql8.2-contrib postgresql8.2-devel postgresql8.2-pl postgresql8.2-plpgsql postgresql8.2-plpython postgresql8.2-server
+BuildRequires: postgresql-devel postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
 BuildRequires: gettext-devel libgoocanvas-devel
 BuildRequires: gnome-python-extras
 
 Requires: gda1.2-postgres
-Requires: postgresql8.2 postgresql8.2-contrib postgresql8.2-devel postgresql8.2-pl postgresql8.2-plpgsql postgresql8.2-plpython postgresql8.2-server
+#Requires: postgresql8.2 postgresql8.2-contrib postgresql8.2-devel postgresql8.2-pl postgresql8.2-plpgsql postgresql8.2-plpython postgresql8.2-server
+Requires: postgresql-virtual postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
 
 Requires(post):   shared-mime-info desktop-file-utils
 Requires(postun): shared-mime-info desktop-file-utils
