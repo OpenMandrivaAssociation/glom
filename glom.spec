@@ -3,46 +3,45 @@
 %define lib_major 0
 %define lib_name %mklibname glom %{lib_major}
 
-Name:           glom
-Version:        %{major_version}.%{minor_version}
-Release:        %mkrel 1
-Summary:        Easy-to-use database designer and user interface
-Group:          Development/Databases
-License:        GPLv2+
-URL:            http://www.glom.org/
-Source0:        http://ftp.gnome.org/pub/GNOME/sources/glom/%{major_version}/%{name}-%{major_version}.%{minor_version}.tar.bz2
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Summary:	Easy-to-use database designer and user interface
+Name:		glom
+Version:	%{major_version}.%{minor_version}
+Release:	%mkrel 2
+Group:		Development/Databases
+License:	GPLv2+
+URL:		http://www.glom.org/
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/%{major_version}/%{name}-%{major_version}.%{minor_version}.tar.bz2
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
-BuildRequires:  libbakery2.4-devel >= 2.4
-BuildRequires:  desktop-file-utils gettext intltool
-BuildRequires:  libgdamm3-devel >= 2.9.81
-BuildRequires:  python
-BuildRequires:  python-devel
-BuildRequires:  gnome-python-gda gnome-python-gda-devel
-BuildRequires:  libgnomecanvasmm2.6-devel >= 2.10
-BuildRequires:  libgnome2-devel >= 2.6.0
-BuildRequires:  libxslt-devel >= 1.1.10
-BuildRequires:  pygtk2.0-devel >= 2.6
-BuildRequires:  gnome-doc-utils
-BuildRequires:  scrollkeeper
-BuildRequires:  startup-notification-devel
-BuildRequires:  iso-codes
-BuildRequires: libxslt-proc
-BuildRequires: libgtksourceviewmm-1.0-devel
+BuildRequires:	libbakery2.4-devel >= 2.4
+BuildRequires:	desktop-file-utils gettext intltool
+BuildRequires:	libgdamm3-devel >= 2.9.81
+BuildRequires:	python
+BuildRequires:	python-devel
+BuildRequires:	gnome-python-gda gnome-python-gda-devel
+BuildRequires:	libgnomecanvasmm2.6-devel >= 2.10
+BuildRequires:	libgnome2-devel >= 2.6.0
+BuildRequires:	libxslt-devel >= 1.1.10
+BuildRequires:	pygtk2.0-devel >= 2.6
+BuildRequires:	gnome-doc-utils
+BuildRequires:	scrollkeeper
+BuildRequires:	startup-notification-devel
+BuildRequires:	iso-codes
+BuildRequires:	libxslt-proc
+BuildRequires:	libgtksourceviewmm-1.0-devel
 #BuildRequires: postgresql8.2 postgresql8.2-contrib postgresql8.2-devel postgresql8.2-pl postgresql8.2-plpgsql postgresql8.2-plpython postgresql8.2-server
-BuildRequires: postgresql-devel postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
-BuildRequires: gettext-devel libgoocanvas-devel
-BuildRequires: gnome-python-extras
+BuildRequires:	postgresql-devel postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
+BuildRequires:	gettext-devel libgoocanvas-devel
+BuildRequires:	gnome-python-extras
 
-Requires: gda1.2-postgres
+Requires:	gda1.2-postgres
 #Requires: postgresql8.2 postgresql8.2-contrib postgresql8.2-devel postgresql8.2-pl postgresql8.2-plpgsql postgresql8.2-plpython postgresql8.2-server
-Requires: postgresql-virtual postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
+Requires:	postgresql-virtual postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
 
-Requires(post):   shared-mime-info desktop-file-utils
-Requires(postun): shared-mime-info desktop-file-utils
-Requires(post):   scrollkeeper
-Requires(postun): scrollkeeper
-
+Requires(post):	shared-mime-info desktop-file-utils
+Requires(postun):	shared-mime-info desktop-file-utils
+Requires(post):	scrollkeeper
+Requires(postun):	scrollkeeper
 
 %description
 Glom lets you design database systems - the database and the user
@@ -53,9 +52,9 @@ Date, Time, Boolean, and Image field types. Glom systems require
 almost no programming, but you may use Python for calculated fields or
 buttons. Glom uses the postgresql8.2 database backend.
 
-%package -n     %{lib_name}
-Summary:        %{Summary}
-Group:          System/Libraries
+%package -n %{lib_name}
+Summary:	A support library for accessing Glom data
+Group:		System/Libraries
 Obsoletes:	%mklibname glom-1_ 0
 
 %description -n %{lib_name}
@@ -76,15 +75,15 @@ A support library for accessing Glom data.
 
 
 %install
-rm -rf ${RPM_BUILD_ROOT}
+rm -rf %{buildroot}
 %makeinstall_std
 #make install DESTDIR=${RPM_BUILD_ROOT}
 %find_lang %{name}
-find $RPM_BUILD_ROOT -type f -name "*.la" -exec rm -f {} ';'
+find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 
-desktop-file-install --vendor="" \
+desktop-file-install \
   --remove-category="Application" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
+  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 #rm -f ${RPM_BUILD_ROOT}%{_libdir}/libglom.so
 
@@ -109,11 +108,11 @@ desktop-file-install --vendor="" \
 %endif
 
 %clean
-rm -rf ${RPM_BUILD_ROOT}
+rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
-%doc AUTHORS COPYING ChangeLog NEWS README
+%doc AUTHORS ChangeLog NEWS README
 %{_bindir}/%{name}
 %{_libdir}/libglom.so
 %{_libdir}/python2.5/site-packages/%{name}.so
