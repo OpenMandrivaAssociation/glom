@@ -35,6 +35,8 @@ BuildRequires:	gettext-devel libgoocanvas-devel
 BuildRequires:	gnome-python-extras
 BuildRequires:	libepc-devel
 BuildRequires:	goocanvasmm-devel
+BuildRequires:	libgtksourceviewmm-2.0-devel
+BuildRequires:	avahi-ui-devel
 
 Requires:	gda1.2-postgres
 Requires:	postgresql-virtual postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
