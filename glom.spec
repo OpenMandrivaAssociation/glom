@@ -1,21 +1,22 @@
-%define major_version 1.6
-%define minor_version 17
+%define major_version 1.7
+%define minor_version 1
 %define lib_major 0
 %define lib_name %mklibname glom %{lib_major}
+%define develname %mklibname -d glom
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
 Version:	%{major_version}.%{minor_version}
-Release:	%mkrel 2
+Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
 URL:		http://www.glom.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/%{major_version}/%{name}-%{major_version}.%{minor_version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
-BuildRequires:	libbakery2.4-devel >= 2.4
+BuildRequires:	libbakery2.6-devel
 BuildRequires:	desktop-file-utils gettext intltool
-BuildRequires:	libgdamm3-devel >= 2.9.81
+BuildRequires:	libgdamm3-devel >= 2.9.82
 BuildRequires:	python
 BuildRequires:	python-devel
 BuildRequires:	gnome-python-gda gnome-python-gda-devel
@@ -29,19 +30,14 @@ BuildRequires:	startup-notification-devel
 BuildRequires:	iso-codes
 BuildRequires:	libxslt-proc
 BuildRequires:	libgtksourceviewmm-1.0-devel
-#BuildRequires: postgresql8.2 postgresql8.2-contrib postgresql8.2-devel postgresql8.2-pl postgresql8.2-plpgsql postgresql8.2-plpython postgresql8.2-server
 BuildRequires:	postgresql-devel postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
 BuildRequires:	gettext-devel libgoocanvas-devel
 BuildRequires:	gnome-python-extras
+BuildRequires:	libepc-devel
+BuildRequires:	goocanvasmm-devel
 
 Requires:	gda1.2-postgres
-#Requires: postgresql8.2 postgresql8.2-contrib postgresql8.2-devel postgresql8.2-pl postgresql8.2-plpgsql postgresql8.2-plpython postgresql8.2-server
 Requires:	postgresql-virtual postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
-
-Requires(post):	shared-mime-info desktop-file-utils
-Requires(postun):	shared-mime-info desktop-file-utils
-Requires(post):	scrollkeeper
-Requires(postun):	scrollkeeper
 
 %description
 Glom lets you design database systems - the database and the user
@@ -60,6 +56,15 @@ Obsoletes:	%mklibname glom-1_ 0
 %description -n %{lib_name}
 A support library for accessing Glom data.
 
+%package -n %{develname}
+Summary:        Development files for Glom
+Group:          Development/Other
+Conflicts:	%name < 0.17.1
+Requires:	%{lib_name} = %version
+
+%description -n %{develname}
+Development files for Glom.
+
 %prep
 %setup -q
 
@@ -77,7 +82,6 @@ A support library for accessing Glom data.
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-#make install DESTDIR=${RPM_BUILD_ROOT}
 %find_lang %{name}
 find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 
@@ -114,18 +118,19 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog NEWS README
 %{_bindir}/%{name}
-%{_libdir}/libglom.so
 %{_libdir}/python2.5/site-packages/%{name}.so
-%{_datadir}/%{name}/
+%{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/gnome/help/%{name}
-%{_datadir}/icons/hicolor/48x48/apps/%{name}.png
-%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+%{_iconsdir}/hicolor/*/apps/*
 %{_datadir}/mime/packages/%{name}.xml
 %{_datadir}/mime-info/*
 %{_datadir}/omf/%{name}
-%{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %files -n %{lib_name}
 %defattr(-,root,root)
 %{_libdir}/*.so.%{lib_major}*
+
+%files -n %{develname}
+%defattr(-,root,root)
+%{_libdir}/libglom.so
