@@ -1,5 +1,5 @@
 %define major_version 1.7
-%define minor_version 1
+%define minor_version 2
 %define lib_major 0
 %define lib_name %mklibname glom %{lib_major}
 %define develname %mklibname -d glom
@@ -7,7 +7,7 @@
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
 Version:	%{major_version}.%{minor_version}
-Release:	%mkrel 2
+Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
 URL:		http://www.glom.org/
@@ -33,7 +33,7 @@ BuildRequires:	postgresql-devel postgresql-plpython postgresql-server postgresql
 BuildRequires:	gettext-devel libgoocanvas-devel
 BuildRequires:	gnome-python-extras
 BuildRequires:	libepc-devel
-BuildRequires:	goocanvasmm-devel
+BuildRequires:	goocanvasmm-devel >= 0.11.0
 BuildRequires:	libgtksourceviewmm-2.0-devel
 BuildRequires:	avahi-ui-devel
 
@@ -75,8 +75,7 @@ Development files for Glom.
         --disable-static \
         --disable-update-mime-database \
         --disable-scrollkeeper \
-        --disable-rpath \
-	--with-postgres-utils=/usr/bin
+	--with-postgres-utils=%{_bindir}
 %make
 
 
@@ -92,17 +91,21 @@ desktop-file-install \
 
 #rm -f ${RPM_BUILD_ROOT}%{_libdir}/libglom.so
 
+%if %mdkversion < 200900
 %post
 %update_scrollkeeper
 %{update_desktop_database}
 %update_mime_database
 %update_icon_cache hicolor
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_scrollkeeper
 %{clean_desktop_database}
 %clean_mime_database
 %clean_icon_cache hicolor
+%endif
 
 %if %mdkversion < 200900
 %post -n %{lib_name} -p /sbin/ldconfig
