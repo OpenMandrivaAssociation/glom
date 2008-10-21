@@ -1,17 +1,15 @@
-%define major_version 1.7
-%define minor_version 2
 %define lib_major 0
 %define lib_name %mklibname glom %{lib_major}
 %define develname %mklibname -d glom
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	%{major_version}.%{minor_version}
-Release:	%mkrel 3
+Version:	1.8.0
+Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
 URL:		http://www.glom.org/
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/%{major_version}/%{name}-%{major_version}.%{minor_version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	libbakery2.6-devel
@@ -30,10 +28,10 @@ BuildRequires:	startup-notification-devel
 BuildRequires:	iso-codes
 BuildRequires:	libxslt-proc
 BuildRequires:	postgresql-devel postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
-BuildRequires:	gettext-devel libgoocanvas-devel
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-python-extras
 BuildRequires:	libepc-devel
-BuildRequires:	goocanvasmm-devel >= 0.11.0
+BuildRequires:	goocanvasmm-devel >= 0.12.0
 BuildRequires:	libgtksourceviewmm-2.0-devel
 BuildRequires:	avahi-ui-devel
 
