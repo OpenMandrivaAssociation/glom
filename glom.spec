@@ -35,7 +35,8 @@ BuildRequires:	libepc-devel
 BuildRequires:	goocanvasmm-devel >= 0.12.0
 BuildRequires:	libgtksourceviewmm-2.0-devel
 BuildRequires:	avahi-ui-devel
-
+#gw libtool dep
+BuildRequires: libtasn1-devel
 Requires:	libgda4.0-postgres
 Requires:	postgresql-virtual postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
 
