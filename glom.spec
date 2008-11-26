@@ -4,7 +4,7 @@
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.8.1
+Version:	1.8.2
 Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
@@ -35,7 +35,7 @@ BuildRequires:	goocanvasmm-devel >= 0.12.0
 BuildRequires:	libgtksourceviewmm-2.0-devel
 BuildRequires:	avahi-ui-devel
 
-Requires:	gda2.0-postgres
+Requires:	libgda4.0-postgres
 Requires:	postgresql-virtual postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
 
 %description
