@@ -17,8 +17,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libbakery2.6-devel
 BuildRequires:	desktop-file-utils gettext intltool
 BuildRequires:	libgdamm3-devel >= 2.9.82
-BuildRequires:	python
-BuildRequires:	python-devel
+%py_requires -d
 BuildRequires:	gnome-python-gda gnome-python-gda-devel
 BuildRequires:	libgnomecanvasmm2.6-devel >= 2.10
 BuildRequires:	libgnome2-devel >= 2.6.0
