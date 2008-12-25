@@ -122,7 +122,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog NEWS README
 %{_bindir}/%{name}
-%{_libdir}/python2.5/site-packages/%{name}.so
+%{py_platsitedir}/%{name}.so
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/gnome/help/%{name}
