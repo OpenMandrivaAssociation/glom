@@ -4,19 +4,17 @@
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.8.4
-Release:	%mkrel 2
+Version:	1.8.5
+Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
 URL:		http://www.glom.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/%{name}-%{version}.tar.bz2
-#gw from svn
-Patch: glom-1.8.3-build-with-goocanvasmm-0.13.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	libbakery2.6-devel
 BuildRequires:	desktop-file-utils gettext intltool
-BuildRequires:	libgdamm3-devel >= 2.9.82
+BuildRequires:	libgdamm3-devel < 3.99
 %py_requires -d
 BuildRequires:	gnome-python-gda gnome-python-gda-devel
 BuildRequires:	libgnomecanvasmm2.6-devel >= 2.10
@@ -66,7 +64,6 @@ Development files for Glom.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 %configure2_5x \
