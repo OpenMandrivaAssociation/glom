@@ -4,7 +4,7 @@
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.9.1
+Version:	1.9.2
 Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
@@ -15,6 +15,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libbakery2.6-devel
 BuildRequires:	desktop-file-utils gettext intltool
 BuildRequires:	libgdamm4-devel >= 3.99.8
+BuildRequires:	gda4.0-devel >= 3.99.12
 %py_requires -d
 BuildRequires:	gnome-python-gda gnome-python-gda-devel >= 2.25.2
 BuildRequires:	libgnomecanvasmm2.6-devel >= 2.10
