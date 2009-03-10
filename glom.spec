@@ -1,10 +1,11 @@
+%define api 1.0
 %define lib_major 0
-%define lib_name %mklibname glom %{lib_major}
+%define lib_name %mklibname glom %api %{lib_major}
 %define develname %mklibname -d glom
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.9.3
+Version:	1.9.4
 Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
@@ -15,7 +16,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libbakery2.6-devel
 BuildRequires:	desktop-file-utils gettext intltool
 BuildRequires:	libgdamm4-devel >= 3.99.12
-BuildRequires:	gda4.0-devel >= 3.99.12
+BuildRequires:	gda4.0-devel >= 3.99.13
 %py_requires -d
 BuildRequires:	gnome-python-gda gnome-python-gda-devel >= 2.25.2
 BuildRequires:	libgnomecanvasmm2.6-devel >= 2.10
@@ -130,8 +131,10 @@ rm -rf %{buildroot}
 
 %files -n %{lib_name}
 %defattr(-,root,root)
-%{_libdir}/*.so.%{lib_major}*
+%{_libdir}/libglom-%api.so.%{lib_major}*
 
 %files -n %{develname}
 %defattr(-,root,root)
-%{_libdir}/libglom.so
+%{_libdir}/libglom-%api.so
+%_includedir/%name-%api
+%_libdir/pkgconfig/%name-%api.pc
