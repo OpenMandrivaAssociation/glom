@@ -1,12 +1,12 @@
-%define api 1.0
+%define api 1.12
 %define lib_major 0
 %define lib_name %mklibname glom %api %{lib_major}
 %define develname %mklibname -d glom
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.11.0
-Release:	%mkrel 2
+Version:	1.11.1
+Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
 URL:		http://www.glom.org/
@@ -16,7 +16,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libbakery2.6-devel
 BuildRequires:	desktop-file-utils gettext intltool
 BuildRequires:	libgdamm4-devel >= 3.99.15
-BuildRequires:	gda4.0-devel >= 3.99.13
+BuildRequires:	gda4.0-devel >= 4.0.4
 %py_requires -d
 BuildRequires:	gnome-python-gda gnome-python-gda-devel >= 2.25.2
 BuildRequires:	libgnomecanvasmm2.6-devel >= 2.10
@@ -120,13 +120,12 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog NEWS README
 %{_bindir}/%{name}
-%{py_platsitedir}/%{name}.so
+%{py_platsitedir}/%{name}_1_12.so
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/gnome/help/%{name}
 %{_iconsdir}/hicolor/*/apps/*
 %{_datadir}/mime/packages/%{name}.xml
-%{_datadir}/mime-info/*
 %{_datadir}/omf/%{name}
 
 %files -n %{lib_name}
@@ -137,4 +136,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_libdir}/libglom-%api.so
 %_includedir/%name-%api
-%_libdir/pkgconfig/%name-%api.pc
+%_libdir/pkgconfig/%name-1.0.pc
