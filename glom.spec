@@ -75,7 +75,9 @@ Development files for Glom.
         --disable-update-mime-database \
         --disable-scrollkeeper \
 	--with-postgres-utils=%{_bindir}
-%make
+#%make
+#gw https://bugzilla.gnome.org/show_bug.cgi?id=600944
+make -j4
 
 
 %install
