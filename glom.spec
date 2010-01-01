@@ -2,6 +2,7 @@
 %define lib_major 0
 %define lib_name %mklibname glom %api %{lib_major}
 %define develname %mklibname -d glom
+%define postgresql 8.4
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
@@ -28,7 +29,7 @@ BuildRequires:	scrollkeeper
 BuildRequires:	startup-notification-devel
 BuildRequires:	iso-codes
 BuildRequires:	libxslt-proc
-BuildRequires:	postgresql-devel postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
+BuildRequires:	postgresql%{postgresql}-devel postgresql%{postgresql}-plpython postgresql%{postgresql}-server postgresql%{postgresql}-plpython postgresql%{postgresql}-plpgsql postgresql%{postgresql}-pl postgresql%{postgresql}-contrib
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-python-extras
 BuildRequires:	libepc-devel
@@ -37,7 +38,7 @@ BuildRequires:	libgtksourceviewmm-2.0-devel
 BuildRequires:	avahi-ui-devel
 Requires:	gnome-python-gda
 Requires:	libgda4.0-postgres
-Requires:	postgresql-virtual postgresql-plpython postgresql-server postgresql-plpython postgresql-plpgsql postgresql-pl postgresql-contrib-virtual
+Requires:	postgresql%{postgresql} postgresql%{postgresql}-plpython postgresql%{postgresql}-server postgresql%{postgresql}-plpython postgresql%{postgresql}-plpgsql postgresql%{postgresql}-pl postgresql%{postgresql}-contrib
 
 %description
 Glom lets you design database systems - the database and the user
@@ -46,7 +47,7 @@ lookups, related fields, related records, calculated fields, drop-down
 choices, searching, reports, users and groups. It has Numeric, Text,
 Date, Time, Boolean, and Image field types. Glom systems require
 almost no programming, but you may use Python for calculated fields or
-buttons. Glom uses the postgresql8.2 database backend.
+buttons. Glom uses the postgresql%{postgresql} database backend.
 
 %package -n %{lib_name}
 Summary:	A support library for accessing Glom data
