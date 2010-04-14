@@ -1,4 +1,4 @@
-%define api 1.12
+%define api 1.14
 %define lib_major 0
 %define lib_name %mklibname glom %api %{lib_major}
 %define develname %mklibname -d glom
@@ -6,7 +6,7 @@
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.12.7
+Version:	1.14.0
 Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
@@ -21,9 +21,11 @@ BuildRequires:	gda4.0-devel >= 4.0.4
 %py_requires -d
 BuildRequires:	gnome-python-gda gnome-python-gda-devel >= 2.25.2
 BuildRequires:	libgnomecanvasmm2.6-devel >= 2.10
+BuildRequires:	boost-devel
 BuildRequires:	libgnome2-devel >= 2.6.0
 BuildRequires:	libxslt-devel >= 1.1.10
 BuildRequires:	pygtk2.0-devel >= 2.6
+BuildRequires:	gtkmm2.4-devel >= 2.19.4
 BuildRequires:	gnome-doc-utils
 BuildRequires:	scrollkeeper
 BuildRequires:	startup-notification-devel
@@ -70,6 +72,8 @@ Development files for Glom.
 %setup -q
 
 %build
+#else the configure check for boost::python fails in 1.3.4:
+%define _disable_ld_as_needed 1
 %configure2_5x \
         --disable-dependency-tracking \
         --disable-static \
@@ -124,7 +128,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog NEWS README
 %{_bindir}/%{name}
-%{py_platsitedir}/%{name}_1_12.so
+%{py_platsitedir}/%{name}_1_14.so
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/gnome/help/%{name}
