@@ -6,7 +6,7 @@
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.14.0
+Version:	1.14.1
 Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
@@ -38,6 +38,8 @@ BuildRequires:	libepc-devel
 BuildRequires:	goocanvasmm-devel >= 0.13.0
 BuildRequires:	libgtksourceviewmm-2.0-devel
 BuildRequires:	avahi-ui-devel
+#gw for docs building
+BuildRequires:	python-sphinx
 Requires:	gnome-python-gda
 Requires:	libgda4.0-postgres
 Requires:	postgresql%{postgresql} postgresql%{postgresql}-plpython postgresql%{postgresql}-server postgresql%{postgresql}-plpython postgresql%{postgresql}-plpgsql postgresql%{postgresql}-pl postgresql%{postgresql}-contrib
@@ -145,3 +147,6 @@ rm -rf %{buildroot}
 %{_libdir}/libglom-%api.so
 %_includedir/%name-%api
 %_libdir/pkgconfig/%name-%api.pc
+%doc %_datadir/doc/pyglom*
+%doc %_datadir/doc/libglom-%api
+%doc %_datadir/devhelp/books/*
