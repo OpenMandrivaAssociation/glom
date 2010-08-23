@@ -7,7 +7,7 @@
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
 Version:	1.14.6
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Development/Databases
 License:	GPLv2+
 URL:		http://www.glom.org/
@@ -74,18 +74,13 @@ Development files for Glom.
 %setup -q
 
 %build
-#else the configure check for boost::python fails in 1.3.4:
-%define _disable_ld_as_needed 1
 %configure2_5x \
         --disable-dependency-tracking \
         --disable-static \
         --disable-update-mime-database \
         --disable-scrollkeeper \
 	--with-postgres-utils=%{_bindir}
-#%make
-#gw https://bugzilla.gnome.org/show_bug.cgi?id=600944
-make -j4
-
+%make
 
 %install
 rm -rf %{buildroot}
