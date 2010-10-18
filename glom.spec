@@ -1,4 +1,4 @@
-%define api 1.14
+%define api 1.16
 %define lib_major 0
 %define lib_name %mklibname glom %api %{lib_major}
 %define develname %mklibname -d glom
@@ -6,8 +6,8 @@
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.14.6
-Release:	%mkrel 2
+Version:	1.16.0
+Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
 URL:		http://www.glom.org/
@@ -125,7 +125,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog NEWS README
 %{_bindir}/%{name}
-%{py_platsitedir}/%{name}_1_14.so
+%{py_platsitedir}/%{name}_%api.so
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/gnome/help/%{name}
