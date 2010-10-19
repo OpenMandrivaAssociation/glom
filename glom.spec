@@ -6,7 +6,7 @@
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.16.0
+Version:	1.16.1
 Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
@@ -125,7 +125,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog NEWS README
 %{_bindir}/%{name}
-%{py_platsitedir}/%{name}_%api.so
+%{py_platsitedir}/%{name}_1_16.so
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/gnome/help/%{name}
