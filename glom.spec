@@ -2,12 +2,12 @@
 %define lib_major 0
 %define lib_name %mklibname glom %api %{lib_major}
 %define develname %mklibname -d glom
-%define postgresql 8.4
+%define postgresql 9.0
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
 Version:	1.16.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Development/Databases
 License:	GPLv2+
 URL:		http://www.glom.org/
@@ -18,7 +18,7 @@ BuildRequires:	libbakery2.6-devel
 BuildRequires:	desktop-file-utils gettext intltool
 BuildRequires:	libgdamm4-devel >= 3.99.15
 BuildRequires:	gda4.0-devel >= 4.0.4
-%py_requires -d
+BuildRequires:	python-devel
 BuildRequires:	gnome-python-gda gnome-python-gda-devel >= 2.25.2
 BuildRequires:	libgnomecanvasmm2.6-devel >= 2.10
 BuildRequires:	boost-devel
