@@ -125,7 +125,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog NEWS README
 %{_bindir}/%{name}
-%{py_platsitedir}/%{name}_1_16.so
+%{py_platsitedir}/%{name}_1_18.so
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/gnome/help/%{name}
