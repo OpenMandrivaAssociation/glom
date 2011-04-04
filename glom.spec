@@ -1,4 +1,4 @@
-%define api 1.16
+%define api 1.18
 %define lib_major 0
 %define lib_name %mklibname glom %api %{lib_major}
 %define develname %mklibname -d glom
@@ -6,8 +6,8 @@
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.16.2
-Release:	%mkrel 2
+Version:	1.18.1
+Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
 URL:		http://www.glom.org/
@@ -16,7 +16,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	libbakery2.6-devel
 BuildRequires:	desktop-file-utils gettext intltool
-BuildRequires:	libgdamm4-devel >= 3.99.15
+BuildRequires:	libgdamm4-devel >= 4.1.2
 BuildRequires:	gda4.0-devel >= 4.0.4
 BuildRequires:	python-devel
 BuildRequires:	gnome-python-gda gnome-python-gda-devel >= 2.25.2
@@ -25,7 +25,7 @@ BuildRequires:	boost-devel
 BuildRequires:	libgnome2-devel >= 2.6.0
 BuildRequires:	libxslt-devel >= 1.1.10
 BuildRequires:	pygtk2.0-devel >= 2.6
-BuildRequires:	gtkmm2.4-devel >= 2.19.4
+BuildRequires:	gtkmm2.4-devel >= 2.23.90
 BuildRequires:	gnome-doc-utils
 BuildRequires:	scrollkeeper
 BuildRequires:	startup-notification-devel
@@ -34,7 +34,7 @@ BuildRequires:	libxslt-proc
 BuildRequires:	postgresql%{postgresql}-devel postgresql%{postgresql}-plpython postgresql%{postgresql}-server postgresql%{postgresql}-plpython postgresql%{postgresql}-plpgsql postgresql%{postgresql}-pl postgresql%{postgresql}-contrib
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-python-extras
-BuildRequires:	libepc-devel
+BuildRequires:	libepc-devel >= 0.3.1
 BuildRequires:	goocanvasmm-devel >= 0.13.0
 BuildRequires:	libgtksourceviewmm-2.0-devel
 BuildRequires:	avahi-ui-devel
