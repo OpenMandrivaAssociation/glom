@@ -6,12 +6,12 @@
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.18.1
+Version:	1.18.2
 Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
 URL:		http://www.glom.org/
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/%{name}-%{version}.tar.xz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	libbakery2.6-devel
