@@ -6,7 +6,7 @@
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.18.4
+Version:	1.18.5
 Release:	%mkrel 1
 Group:		Development/Databases
 License:	GPLv2+
