@@ -26,11 +26,11 @@ BuildRequires:	pkgconfig(goocanvasmm-2.0) >= 1.90.3
 BuildRequires:	pkgconfig(gtkmm-3.0) >= 2.99.1
 BuildRequires:	pkgconfig(gtksourceviewmm-3.0) >= 3.0.0
 BuildRequires:	pkgconfig(iso-codes)
-BuildRequires:	pkgconfig(libepc-1.0) >= 0.4.0
-BuildRequires:	pkgconfig(libgdamm-5.0) >= 4.99.6
-BuildRequires:	pkgconfig(libgda-5.0) >= 5.0.3
-BuildRequires:	pkgconfig(libgda-postgres-5.0)
-BuildRequires:	pkgconfig(libgda-sqlite-5.0)
+BuildRequires:	pkgconfig(libepc-1.0)
+BuildRequires:	pkgconfig(libgdamm-4.0)
+BuildRequires:	pkgconfig(libgda-4.0)
+BuildRequires:	pkgconfig(libgda-postgres-4.0)
+BuildRequires:	pkgconfig(libgda-sqlite-4.0)
 BuildRequires:	pkgconfig(libxml++-2.6) >= 2.23.1
 BuildRequires:	pkgconfig(libxslt) >= 1.1.10
 BuildRequires:	pkgconfig(pygobject-3.0) >= 2.29.0
