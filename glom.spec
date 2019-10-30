@@ -1,6 +1,6 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 
-%define api	1.22
+%define api	1.32
 %define major	0
 %define libname	%mklibname glom %{api} %{major}
 %define devname	%mklibname -d glom
@@ -8,8 +8,8 @@
 
 Summary:	Easy-to-use database designer and user interface
 Name:		glom
-Version:	1.22.1
-Release:	2
+Version:	1.32.0
+Release:	1
 Group:		Development/Databases
 License:	GPLv2+
 URL:		http://www.glom.org/
