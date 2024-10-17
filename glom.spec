@@ -12,7 +12,7 @@ Version:	1.32.0
 Release:	1
 Group:		Development/Databases
 License:	GPLv2+
-URL:		http://www.glom.org/
+URL:		https://www.glom.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	intltool
