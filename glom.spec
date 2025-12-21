@@ -15,6 +15,11 @@ License:	GPLv2+
 URL:		https://www.glom.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	intltool
 BuildRequires:	python-sphinx
 BuildRequires:	xsltproc
